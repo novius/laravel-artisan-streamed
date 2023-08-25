@@ -1,0 +1,41 @@
+{
+    "name": "novius/laravel-artisan-streamed",
+    "description": "Launch and view outputs of artisan commands.",
+    "keywords": [
+        "laravel",
+        "artisan"
+    ],
+    "license": "AGPL-3.0-or-later",
+    "require": {
+        "php": ">=8.1",
+        "laravel/framework": "^9.0|^10.0"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "Novius\\LaravelArtisanStreamed\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Novius\\LaravelArtisanStreamed\\ArtisanStreamedServiceProvider"
+            ]
+        }
+    },
+    "scripts": {
+        "fmt": [
+            "./vendor/bin/pint -v"
+        ],
+        "lint": [
+            "@composer fmt -- --test"
+        ]
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}

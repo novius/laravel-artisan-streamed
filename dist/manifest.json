@@ -1,0 +1,11 @@
+{
+  "resources/js/main.js": {
+    "file": "main-7f5f7786.js",
+    "isEntry": true,
+    "src": "resources/js/main.js"
+  },
+  "style.css": {
+    "file": "style-c6b39a79.css",
+    "src": "style.css"
+  }
+}
