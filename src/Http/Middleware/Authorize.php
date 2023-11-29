@@ -2,7 +2,7 @@
 
 namespace Novius\LaravelArtisanStreamed\Http\Middleware;
 
-use Novius\LaravelLivewireFileManager\LivewireFileManager;
+use Novius\LaravelArtisanStreamed\ArtisanStreamed;
 
 class Authorize
 {
@@ -16,10 +16,10 @@ class Authorize
     public function handle($request, $next)
     {
         /**
-         * @var LivewireFileManager $fileManager
-         */
-        $fileManager = app()->get('livewire-file-manager');
+        /** @var ArtisanStreamed $artisanStreamed
+        */
+        $artisanStreamed = app()->get('artisan-streamed');
 
-        return $fileManager->check($request) ? $next($request) : abort(403);
+        return $artisanStreamed->check($request) ? $next($request) : abort(403);
     }
 }
