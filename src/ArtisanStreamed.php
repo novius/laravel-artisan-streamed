@@ -54,4 +54,22 @@ class ArtisanStreamed
             DIRECTORY_SEPARATOR
         );
     }
+
+    /**
+     * Register the custom authentication callback.
+     */
+    public function auth(\Closure $callback): void
+    {
+        $this->authUsing = $callback;
+    }
+
+    /**
+     * Determine if the given request can access the artisan streamed interface.
+     */
+    public function check($request): bool
+    {
+        return ($this->authUsing ?: function () {
+            return true;
+        })($request);
+    }
 }
