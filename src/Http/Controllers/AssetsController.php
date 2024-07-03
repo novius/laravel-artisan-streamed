@@ -2,7 +2,7 @@
 
 namespace Novius\LaravelArtisanStreamed\Http\Controllers;
 
-use Livewire\Controllers\CanPretendToBeAFile;
+use Novius\LaravelArtisanStreamed\Traits\CanPretendToBeAFile;
 
 class AssetsController
 {
