@@ -4,9 +4,11 @@ This package gives an interface to launch custom artisan commands and watch thei
 
 ## Requirements
 
-* PHP >= 8.1
-* Laravel Framework >= 9.0 | >= 10.0
-
+* PHP >= 8.2
+* Laravel Framework >= 10.0
+* 
+> **NOTE**: These instructions are for Laravel >= 10.0 and PHP >= 8.2 If you are using prior version, please
+> see the [previous version's docs](https://github.com/novius/laravel-artisan-streamed/tree/1.x).
 
 ### Configuration
 
