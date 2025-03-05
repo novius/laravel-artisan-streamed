@@ -8,10 +8,11 @@
     "license": "AGPL-3.0-or-later",
     "require": {
         "php": ">=8.2",
-        "laravel/framework": "^10.0|^11.0"
+        "laravel/framework": "^10.0|^11.0|^12.1.0"
     },
     "require-dev": {
-        "laravel/pint": "^1.7"
+        "laravel/pint": "^1.7",
+        "phpstan/phpstan": "^2.1"
     },
     "autoload": {
         "psr-4": {
@@ -26,11 +27,14 @@
         }
     },
     "scripts": {
-        "fmt": [
+        "cs-fix": [
             "./vendor/bin/pint -v"
         ],
         "lint": [
-            "@composer fmt -- --test"
+            "@composer cs-fix -- --test"
+        ],
+        "phpstan": [
+            "vendor/bin/phpstan analyse -c phpstan.neon --memory-limit 1G"
         ]
     },
     "config": {

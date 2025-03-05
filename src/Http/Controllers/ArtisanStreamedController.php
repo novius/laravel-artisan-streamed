@@ -2,13 +2,12 @@
 
 namespace Novius\LaravelArtisanStreamed\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Novius\LaravelArtisanStreamed\ArtisanStreamed;
 use Novius\LaravelArtisanStreamed\Models\LaunchedCommand;
 
-class ArtisanStreamedController extends Controller
+class ArtisanStreamedController
 {
     public function index()
     {

@@ -13,10 +13,10 @@ use Novius\LaravelArtisanStreamed\Contracts\StreamedCommand;
 use Novius\LaravelArtisanStreamed\StreamedLogFile;
 
 /**
- * @property string id
- * @property string slug
- * @property Carbon created_at
- * @property Carbon updated_at
+ * @property string $id
+ * @property string $slug
+ * @property Carbon $created_at
+ * @property Carbon $updated_at
  */
 class LaunchedCommand extends Model
 {
@@ -55,11 +55,12 @@ class LaunchedCommand extends Model
 
     public function prunable(): Builder
     {
-        return static::where(
-            'created_at',
-            '<=',
-            now()->subDays(config('artisan-streamed.records_retention_in_days', 30))
-        );
+        return static::query()
+            ->where(
+                'created_at',
+                '<=',
+                now()->subDays(config('artisan-streamed.records_retention_in_days', 30))
+            );
     }
 
     public function logFilePath(): ?string
