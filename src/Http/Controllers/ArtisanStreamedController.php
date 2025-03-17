@@ -91,7 +91,7 @@ class ArtisanStreamedController
             ]);
         }
 
-        $endLine = $validated['line'] + config('artisan-streamed.stream_chunk_size');
+        $endLine = $validated['line'] + (int) config('artisan-streamed.stream_chunk_size');
         if ($endLine > $totalLines) {
             $endLine = $totalLines;
         }
