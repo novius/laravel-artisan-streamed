@@ -43,7 +43,7 @@ class ArtisanStreamedController
 
         $command = $streamedCommand->artisanCommand($validatedData);
 
-        $launchedCommandItem = new LaunchedCommand();
+        $launchedCommandItem = new LaunchedCommand;
         $launchedCommandItem->slug = $streamedCommand->slug();
 
         throw_if(! $launchedCommandItem->save());

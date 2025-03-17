@@ -2,8 +2,6 @@
 
 namespace Novius\LaravelArtisanStreamed\Http\Middleware;
 
-use Novius\LaravelArtisanStreamed\ArtisanStreamed;
-
 class Authorize
 {
     /**
@@ -16,8 +14,8 @@ class Authorize
     public function handle($request, $next)
     {
         /**
-        /** @var ArtisanStreamed $artisanStreamed
-        */
+        /**
+         */
         $artisanStreamed = app()->get('artisan-streamed');
 
         return $artisanStreamed->check($request) ? $next($request) : abort(403);
