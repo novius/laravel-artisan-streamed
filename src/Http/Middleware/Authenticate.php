@@ -3,8 +3,10 @@
 namespace Novius\LaravelArtisanStreamed\Http\Middleware;
 
 use Closure;
+use Illuminate\Auth\AuthenticationException;
 use Illuminate\Auth\AuthenticationException as BaseAuthenticationException;
 use Illuminate\Auth\Middleware\Authenticate as BaseAuthenticationMiddleware;
+use Illuminate\Http\Request;
 use Novius\LaravelArtisanStreamed\Exceptions\AuthenticationException as ArtisanStreamedAuthenticationException;
 
 class Authenticate extends BaseAuthenticationMiddleware
@@ -12,11 +14,11 @@ class Authenticate extends BaseAuthenticationMiddleware
     /**
      * Handle an incoming request.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  Request  $request
      * @param  string  ...$guards
      * @return mixed
      *
-     * @throws \Illuminate\Auth\AuthenticationException
+     * @throws AuthenticationException
      */
     public function handle($request, Closure $next, ...$guards)
     {

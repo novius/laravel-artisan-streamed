@@ -1,5 +1,8 @@
 <?php
 
+use Novius\LaravelArtisanStreamed\Http\Middleware\Authenticate;
+use Novius\LaravelArtisanStreamed\Http\Middleware\Authorize;
+
 return [
     'path' => '/artisan-streamed',
 
@@ -7,8 +10,8 @@ return [
 
     'middleware' => [
         'web',
-        \Novius\LaravelArtisanStreamed\Http\Middleware\Authenticate::class,
-        \Novius\LaravelArtisanStreamed\Http\Middleware\Authorize::class,
+        Authenticate::class,
+        Authorize::class,
     ],
 
     'login_url' => env('ARTISAN_STREAMED_LOGIN_URL'),

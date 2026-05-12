@@ -1,15 +1,16 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Novius\LaravelArtisanStreamed\Http\Controllers\ArtisanStreamedController;
 
-Route::get('/', [\Novius\LaravelArtisanStreamed\Http\Controllers\ArtisanStreamedController::class, 'index'])
+Route::get('/', [ArtisanStreamedController::class, 'index'])
     ->name('index');
 
-Route::get('/show/{launchedCommand}', [\Novius\LaravelArtisanStreamed\Http\Controllers\ArtisanStreamedController::class, 'show'])
+Route::get('/show/{launchedCommand}', [ArtisanStreamedController::class, 'show'])
     ->name('show');
 
-Route::post('/fetch/{launchedCommand}', [\Novius\LaravelArtisanStreamed\Http\Controllers\ArtisanStreamedController::class, 'fetch'])
+Route::post('/fetch/{launchedCommand}', [ArtisanStreamedController::class, 'fetch'])
     ->name('fetch');
 
-Route::post('/launch/{slug}', [\Novius\LaravelArtisanStreamed\Http\Controllers\ArtisanStreamedController::class, 'launch'])
+Route::post('/launch/{slug}', [ArtisanStreamedController::class, 'launch'])
     ->name('launch');
